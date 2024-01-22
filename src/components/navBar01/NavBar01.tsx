@@ -15,9 +15,11 @@ export const NavBar01 = () => {
 
   return (
     <>
-      <header className="header">
+      <header className="header" data-test="header">
         <div className="navContainer">
-          <span className="logo">React Navigation</span>
+          <span className="logo" data-test="logo">
+            React Navigation
+          </span>
           <nav>
             <ul
               className="linksContainer"
@@ -42,12 +44,14 @@ interface MapNavigationLinksProps {
   clicked: (index: number) => void;
 }
 const MapNavigationLinks = ({ focused, clicked }: MapNavigationLinksProps) => {
-  return navigationLinks.map(({ name }, index) => {
+  return navigationLinks.map(({ name, dataTest }, index) => {
     const style = focused === index ? "focused" : "";
     return (
       <li key={index} className={style} onClick={() => clicked(index)}>
         <Link to={"/"}>
-          <a className="navLink">{name}</a>
+          <a className="navLink" data-test={dataTest}>
+            {name}
+          </a>
         </Link>
       </li>
     );
@@ -62,6 +66,7 @@ const UseToggle = ({ handleToggle, isActive }: UseToggleProps) => {
   return (
     <button
       onClick={handleToggle}
+      data-test="button-toggle"
       className={`navToggle ${isActive ? "active" : null}`}
     >
       <span />
