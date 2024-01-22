@@ -1,10 +1,11 @@
-import Card_01 from "../components/cards/01-card/Card_01";
+import { Card_02 } from "../components/cards/02_card/Card_02";
+
 import React from "react";
 
 export default function Home() {
   return (
     <div>
-      <Card_01 />
+      <Card_02 />
     </div>
   );
 }
